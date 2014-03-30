@@ -1,6 +1,7 @@
 # OSX
 .DS_STORE
 .sublime-project
+.sublime-workspace
 .project
 
 # Byte-compiled / optimized / DLL files
