@@ -1,1 +1,1 @@
-web: krindle krindleapp.wsgi
+web: python krindleapp/manage.py runserver "0.0.0.0:$PORT" 
