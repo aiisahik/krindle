@@ -1,8 +1,40 @@
 {% extends '_base.html' %}
 
+{% block header%}
+{% include '_header.html' %}
+{% endblock %}
 
 {% block body %}
-<input type="text" name="login">
-<input type="password" name="password">
-<button name="submit">Submit</button>
+<div class="container">
+	<br>
+	<div class="row">
+		<div class="medium-6 columns">Welcome to Krindle!</div>
+
+		<div class="medium-6 columns">
+			<form method="POST">
+				<div class="row">
+				    <div class="large-12 columns">
+				      <label>Email
+				        <input type="text" name="email" placeholder="email">
+				      </label>
+				    </div>
+				</div>
+				<div class="row">
+				    <div class="large-12 columns">
+				      <label>Password
+				        <input type="password" name="password" placeholder="password">
+				      </label>
+				    </div>
+				</div>
+				<div class="row">
+				    <div class="large-12 columns">
+				      <label>
+				        <button name="submit" class="button">Submit</button>
+				      </label>
+				    </div>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
 {% endblock %}
