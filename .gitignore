@@ -1,11 +1,7 @@
-
-<<<<<<< HEAD
-=======
 # OSX
 .DS_STORE
 .sublime-project
 .project
->>>>>>> efdea3e8c859af8e67d0dcf3b4929a5dae35de69
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
