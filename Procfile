@@ -1,0 +1,1 @@
+web: krindle krindleapp.wsgi
