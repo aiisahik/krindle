@@ -37,6 +37,7 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'account',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -55,13 +56,6 @@ WSGI_APPLICATION = 'krindleapp.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/1.6/ref/settings/#databases
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
-}
-
 import dj_database_url
 # DATABASES['default'] =  dj_database_url.config()
 DATABASES = {'default': dj_database_url.config(default=DATABASE_URL)}
@@ -101,3 +95,15 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.6/howto/static-files/
 
 STATIC_URL = '/static/'
+
+def _up_n_dirs(path, n=1):
+    return os.path.abspath(reduce(lambda x, f: f(x), [os.path.dirname] * n,
+                                  path))
+    
+PROJECT_DIR = os.path.dirname(_up_n_dirs(__file__, 1))
+
+TEMPLATE_DIRS = (
+    os.path.join(PROJECT_DIR,"templates"),
+)
+
+
