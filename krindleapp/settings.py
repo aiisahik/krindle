@@ -18,6 +18,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'rg+2x5@7$_0%2o(03t)2elv@fp-6%y)to$635wok2(4l@nmxgo'
+DATABASE_URL = "postgres://serptejakqqkzs:xOO_Q4l5d0LnVFKdaQ3jm1NSr2@ec2-54-197-237-171.compute-1.amazonaws.com:5432/de7rpkc4pq59bd"
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -62,7 +63,9 @@ DATABASES = {
 }
 
 import dj_database_url
-DATABASES['default'] =  dj_database_url.config()
+# DATABASES['default'] =  dj_database_url.config()
+DATABASES = {'default': dj_database_url.config(default=DATABASE_URL)}
+
 
 # Honor the 'X-Forwarded-Proto' header for request.is_secure()
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
