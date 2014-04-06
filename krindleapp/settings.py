@@ -10,8 +10,11 @@ https://docs.djangoproject.com/en/1.6/ref/settings/
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
-BASE_DIR = os.path.dirname(os.path.dirname(__file__))
+def _up_n_dirs(path, n=1):
+    return os.path.abspath(reduce(lambda x, f: f(x), [os.path.dirname] * n, path))
 
+BASE_DIR = os.path.dirname(os.path.dirname(__file__))
+PROJECT_DIR = os.path.dirname(_up_n_dirs(__file__, 1))
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.6/howto/deployment/checklist/
@@ -68,13 +71,11 @@ SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 ALLOWED_HOSTS = ['*']
 
 # Static asset configuration
-import os
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 STATIC_ROOT = 'staticfiles'
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, 'static'),
+    os.path.join(PROJECT_DIR, 'static'),
 )
 
 # Internationalization
@@ -96,11 +97,6 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-def _up_n_dirs(path, n=1):
-    return os.path.abspath(reduce(lambda x, f: f(x), [os.path.dirname] * n,
-                                  path))
-    
-PROJECT_DIR = os.path.dirname(_up_n_dirs(__file__, 1))
 
 TEMPLATE_DIRS = (
     os.path.join(PROJECT_DIR,"templates"),
