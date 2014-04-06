@@ -1,4 +1,5 @@
 from django.db import models
+from django.forms import ModelForm
 from django.contrib.auth.models import User
 
 # Create your models here.
@@ -26,7 +27,8 @@ class UserProfile(models.Model):
         ('BACHELORS', 'Bachelors Degree'),
         ('GRADUATE', 'Graduate / Professional Degree'),
     )
-    education_level = models.CharField(max_length=30,
+    education_level = models.CharField('highest education level',
+                                max_length=30,
                                 choices=EDUCATION_LEVEL_CHOICES,
                                 blank=True, null=True)
     HAIR_COLOR_CHOICES = (
@@ -127,19 +129,23 @@ class UserProfile(models.Model):
         ('YES', 'Yes'),
         ('NO', 'No'),
     )
-    have_kids = models.CharField(max_length=30,
+    have_kids = models.CharField('do you have kids?',
+                                max_length=30,
                                 choices=HAVE_KIDS_CHOICES,
                                 blank=True, null=True)
-    have_kids_num = models.IntegerField(blank=True, null=True)
+    have_kids_num = models.IntegerField('how many kids do you have?',
+                                blank=True, null=True)
     WANT_KIDS_CHOICES = (
         ('', 'No Answer'),
         ('YES', 'Yes'),
         ('NO', 'No'),
     )
-    want_kids = models.CharField(max_length=30,
+    want_kids = models.CharField('do you want kids?',
+                                max_length=30,
                                 choices=WANT_KIDS_CHOICES,
                                 blank=True, null=True)
-    want_kids_num = models.IntegerField(blank=True, null=True)
+    want_kids_num = models.IntegerField('how many kids would you want?',
+                                blank=True, null=True)
     SMOKE_CHOICES = (
         ('', 'No Answer'),
         ('NO', 'No'),
@@ -147,7 +153,8 @@ class UserProfile(models.Model):
         ('DAILY', 'Daily'),
         ('QUITTING', 'Yes, But Trying To Quit'),
     )
-    smoke = models.CharField(max_length=30,
+    smoke = models.CharField('do you smoke?',
+                                max_length=30,
                                 choices=SMOKE_CHOICES,
                                 blank=True, null=True)
     DRINK_CHOICES = (
@@ -156,7 +163,8 @@ class UserProfile(models.Model):
         ('SOCIAL', 'Social Drinker'),
         ('REGULAR', 'Regularly'),
     )
-    drink = models.CharField(max_length=30,
+    drink = models.CharField('do you drink?',
+                                max_length=30,
                                 choices=DRINK_CHOICES,
                                 blank=True, null=True)
     EXERCISE_CHOICES = (
@@ -164,7 +172,8 @@ class UserProfile(models.Model):
         ('MODERATE', '1-3 Times Per Week'),
         ('FIEND', '4-5 Times Per Week'),
     )
-    exercise = models.CharField(max_length=30,
+    exercise = models.CharField('how often do you exercise per week?',
+                                max_length=30,
                                 choices=EXERCISE_CHOICES,
                                 blank=True, null=True)
     ETHNICITY_CHOICES = (
@@ -179,7 +188,8 @@ class UserProfile(models.Model):
         ('CAUCASIAN', 'White / Caucasian'),
         ('OTHER', 'Other'),
     )
-    ethnicity = models.CharField(max_length=30,
+    ethnicity = models.CharField("what's your ethnicity?",
+                                max_length=30,
                                 choices=ETHNICITY_CHOICES,
                                 blank=True, null=True)
     RELIGION_CHOICES = (
@@ -208,7 +218,8 @@ class UserProfile(models.Model):
         ('NONCONFORMIST', 'Non-Conformist'),
         ('OTHER', 'Other'),
     )
-    politics = models.CharField(max_length=30,
+    politics = models.CharField("What's your political view?",
+                                max_length=30,
                                 choices=POLITICS_CHOICES,
                                 blank=True, null=True)
     HAVE_PETS_CHOICES = (
@@ -216,7 +227,8 @@ class UserProfile(models.Model):
         ('NO', 'No'),
         ('YES', 'Yes'),
     )
-    have_pets = models.CharField(max_length=30,
+    have_pets = models.CharField('do you have pets?',
+                                max_length=30,
                                 choices=HAVE_PETS_CHOICES,
                                 blank=True, null=True)
     LIKE_PETS_CHOICES = (
@@ -224,10 +236,16 @@ class UserProfile(models.Model):
         ('NO', 'No'),
         ('YES', 'Yes'),
     )
-    like_pets = models.CharField(max_length=30,
+    like_pets = models.CharField('do you like pets?',
+                                max_length=30,
                                 choices=LIKE_PETS_CHOICES,
                                 blank=True, null=True)
 
+
+class UserProfileForm(ModelForm):
+    class Meta:
+        model = UserProfile
+        fields = ['birth_date', 'weight', 'height', 'gender', 'education_level']
 
 
 
