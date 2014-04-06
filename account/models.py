@@ -5,33 +5,26 @@ from django.contrib.auth.models import User
 
 class UserProfile(models.Model):
     user = models.ForeignKey(User)
-    question = models.CharField(max_length=200)
-    pub_date = models.DateTimeField('date published')
-    RELIGION = (
-        ('NO ANSWER', 'NO ANSWER'),
-        ('CHRISTIAN', 'Christian'),
-        ('MUSLIM', 'Muslim'),
-        ('NA', 'Prefer Not To Say'),
-        ('AGNOSTIC', 'Agnostic'),
-    )
+    birth_date = models.DateField(blank=True)
+    # Weight in pounds
+    weight = models.IntegerField(blank=True)
+    # Height in inches
+    height = models.IntegerField(blank=True)
+
     GENDER = (
         ('M', 'Male'),
         ('F', 'Female')
     )
-    birth_date = models.DateField()
-    # Weight in pounds
-    weight = models.IntegerField()
-    # Height in inches
-    height = models.IntegerField()
     EDUCATION_LEVEL = (
-        ('NO ANSWER', 'NO ANSWER'),
+        (None, 'No Answer'),
         ('HIGH SCHOOL', 'High School'),
         ('SOME COLLEGE', 'Some College'),
-        ('COLLEGE GRADUATE', 'College Graduate'),
-        ('POST GRADUATE', 'Post Graduate'),
+        ('ASSOCIATES', 'Associates Degree'),
+        ('BACHELORS', 'Bachelors Degree'),
+        ('GRADUATE', 'Graduate / Professional Degree'),
     )
     HAIR_COLOR = (
-        ('NO ANSWER', 'NO ANSWER'),
+        (None, 'No Answer'),
         ('BLACK', 'Black'),
         ('BLONDE', 'Blonde'),
         ('DARK BLONDE', 'Dark Blonde'),
@@ -43,7 +36,7 @@ class UserProfile(models.Model):
         ('BALD', 'Bald'),
     )
     EYE_COLOR = (
-        ('NO ANSWER', 'NO ANSWER'),
+        (None, 'No Answer'),
         ('BLACK', 'Black'),
         ('BLUE', 'Blue'),
         ('BROWN', 'Brown'),
@@ -52,7 +45,7 @@ class UserProfile(models.Model):
         ('HAZEL', 'Hazel'),
     )
     BODY_TYPE = (
-        ('NO ANSWER', 'NO ANSWER'),
+        (None, 'No Answer'),
         ('SLENDER', 'Slender / Thin'),
         ('AVERAGE', 'Average'),
         ('ATHLETIC', 'Athletic'),
@@ -61,29 +54,124 @@ class UserProfile(models.Model):
         ('STOCKY', 'Stocky'),
     )
     ASTROLOGICAL_SIGN = (
-        ('NO ANSWER', 'NO ANSWER'),
-        ('CAPRICORN', 'CAPRICORN'),
-        ('AQUARIUS', 'AQUARIUS'),
-        ('PISCES', 'PISCES'),
-        ('ARIES', 'ARIES'),
-        ('TAURUS', 'TAURUS'),
-        ('GEMINI', 'GEMINI'),
-        ('CANCER', 'CANCER'),
-        ('LEO', 'LEO'),
-        ('VIRGO', 'VIRGO'),
-        ('LIBRA', 'LIBRA'),
-        ('SCORPIO', 'SCORPIO'),
-        ('SAGITTARIUS', 'SAGITTARIUS'),
+        (None, 'No Answer'),
+        ('CAPRICORN', 'Capricorn'),
+        ('AQUARIUS', 'Aquarius'),
+        ('PISCES', 'Pisces'),
+        ('ARIES', 'Aries'),
+        ('TAURUS', 'Taurus'),
+        ('GEMINI', 'Gemini'),
+        ('CANCER', 'Cancer'),
+        ('LEO', 'Leo'),
+        ('VIRGO', 'Virgo'),
+        ('LIBRA', 'Libra'),
+        ('SCORPIO', 'Scorpio'),
+        ('SAGITTARIUS', 'Sagittarius'),
     )
     RELATIONSHIP_STATUS = (
-        ('NO ANSWER', 'NO ANSWER'),
-        ('CURRENTLY SEPARATED', 'CURRENTLY SEPARATED'),
-        ('DIVORCED', 'DIVORCED'),
-        ('WIDOW / WIDOWER', 'WIDOW / WIDOWER'),
+        (None, 'No Answer'),
+        ('CURRENTLY SEPARATED', 'Currently Separated'),
+        ('DIVORCED', 'Divorced'),
+        ('WIDOWED', 'Widow / Widower'),
     )
     OCCUPATION = (
-
+        (None, 'No Answer'),
+        ('ADMINISTRATIVE', 'Administrative / Secretarial'),
+        ('ARTISTIC', 'Artistic / Creative / Performance'),
+        ('EXECUTIVE', 'Executive / Management'),
+        ('FINANCE', 'Financial / Accounting / Real Estate'),
+        ('LABOR', 'Labor / Construction'),
+        ('LEGAL', 'Legal'),
+        ('HEALTH', 'Medical / Dental / Veterinary / Fitness'),
+        ('GOVERNMENT', 'Political / Government / Civil Service / Military'),
+        ('RETAIL', 'Retail'),
+        ('RETIRED', 'Retired'),
+        ('MARKETING', 'Sales / Marketing'),
+        ('SELF EMPLOYED', 'Self-Employed / Entrepreneur'),
+        ('STUDENT', 'Student'),
+        ('EDUCATION', 'Education / Teacher / Professor'),
+        ('TECHNICAL', 'Technical / Science / Computers / Engineering'),
+        ('HOSPITALITY', 'Travel / Hospitality / Transportation'),
+        ('OTHER', 'Other Profession'),
+        ('NONPROFIT', 'Nonprofit / Volunteer / Activist'),
+        ('LAW ENFORCEMENT', 'Law Enforcement / Security / Military'),
+        ('FASHION', 'Fashion / Model / Beauty'),
+        ('ARCHITECTURE', 'Architecture / Interior Design'),
     )
-    ETHNICITY = ()
+    HAVE_KIDS = (
+        (None, 'No Answer'),
+        ('YES', 'Yes'),
+        ('NO', 'No'),
+    )
+    have_kids_num = models.IntegerField(blank=True)
+    WANT_KIDS = (
+        (None, 'No Answer'),
+        ('YES', 'Yes'),
+        ('NO', 'No'),
+    )
+    want_kids_num = models.IntegerField(blank=True)
+    SMOKE = (
+        (None, 'No Answer'),
+        ('NO', 'No'),
+        ('OCCASIONAL', 'Occasionally'),
+        ('DAILY', 'Daily'),
+        ('QUITTING', 'Yes, But Trying To Quit'),
+    )
+    DRINK = (
+        (None, 'No Answer'),
+        ('NEVER', 'Never'),
+        ('SOCIAL', 'Social Drinker'),
+        ('REGULAR', 'Regularly'),
+    )
+    EXERCISE = (
+        (None, 'No Answer'),
+        ('MODERATE', '1-3 Times Per Week'),
+        ('FIEND', '4-5 Times Per Week'),
+    )
+    ETHNICITY = (
+        (None, 'No Answer'),
+        ('ASIAN', 'Asian'),
+        ('BLACK', 'Black / African Descent'),
+        ('EAST INDIAN', 'East Indian'),
+        ('HISPANIC', 'Latino / Hispanic'),
+        ('MIDDLE EASTERN', 'Middle Eastern'),
+        ('NATIVE AMERICAN', 'Native American'),
+        ('PACIFIC ISLANDER', 'Pacific Islander'),
+        ('CAUCASIAN', 'White / Caucasian'),
+        ('OTHER', 'Other'),
+    )
+    RELIGION = (
+        (None, 'No Answer'),
+        ('AGNOSTIC', 'Agnostic'),
+        ('ATHEIST', 'Atheist'),
+        ('BUDDHIST', 'Buddhist'),
+        ('CATHOLIC', 'Christian / Catholic'),
+        ('LDS', 'Christian / LDS'),
+        ('PROTESTANT', 'Christian / Protestant'),
+        ('HINDU', 'Hindu'),
+        ('JEWISH', 'Jewish'),
+        ('ISLAM', 'Muslim / Islam'),
+        ('SPIRITUAL', 'Spirital But Not Religious'),
+        ('OTHER', 'Other'),
+        ('OTHER CHRISTIAN', 'Christian / Other'),
+    )
+    POLITICS = (
+        (None, 'No Answer'),
+        ('CONSERVATIVE', 'Conservative'),
+        ('MODERATE', 'Moderate'),
+        ('LIBERAL', 'Liberal'),
+        ('NONCONFORMIST', 'Non-Conformist'),
+        ('OTHER', 'Other'),
+    )
+    HAVE_PETS = (
+        (None, 'No Answer'),
+        ('NO', 'No'),
+        ('YES', 'Yes'),
+    )
+    LIKE_PETS = (
+        (None, 'No Answer'),
+        ('NO', 'No'),
+        ('YES', 'Yes'),
+    )
 
     
