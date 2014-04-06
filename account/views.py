@@ -31,7 +31,7 @@ class LogoutView(View):
 
 
 class ProfileView(DetailView):
-    model = UserProfile
+    # model = UserProfile
     context_object_name = 'user_profile'
     def get_object(self):
         if self.request.user:
@@ -40,9 +40,13 @@ class ProfileView(DetailView):
             return HttpResponseRedirect("/match/")
 
     def get_context_data(self, **kwargs):
-        context = super(EditProfileView, self).get_context_data(**kwargs)
+        context = super(ProfileView, self).get_context_data(**kwargs)
         return context
 
 class EditProfileView(ProfileView, TemplateView):
     template_name="account/editProfile.html"
-    
+
+    def get_context_data(self, **kwargs):
+        context = super(EditProfileView, self).get_context_data(**kwargs)
+        return context
+
