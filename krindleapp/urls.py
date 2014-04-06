@@ -9,7 +9,7 @@ urlpatterns = patterns('',
     # url(r'^$', 'krindleapp.views.home', name='home'),
     url(r'^$', TemplateView.as_view(template_name="home.html")),
     url(r'^account/', include('account.urls')),
-    url(r'^login/', TemplateView.as_view(template_name="login.html")),
+    url(r'^match/', TemplateView.as_view(template_name="main.html")),
 
     url(r'^admin/', include(admin.site.urls)),
 )

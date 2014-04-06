@@ -1,0 +1,38 @@
+{% extends '_base.html' %}
+{% load staticfiles %}
+
+{% block title %}
+<title> Edit Profile </title>
+{% endblock %}
+
+{% block css %}
+{{block.super}}
+<link href='http://fonts.googleapis.com/css?family=Great+Vibes' rel='stylesheet' type='text/css'>
+{% endblock css %}
+
+{% block js %}
+{{block.super}}
+<script src="{% static 'js/foundation/foundation.magellan.js' %}"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js"></script>
+{% endblock %}
+
+{% block header%}
+{% include '_header.html' %}
+{% endblock %}
+
+{% block body %}
+<div class="bg-cover bg-window" style="background-image: url('{% static 'img/couple-cover-01.jpg' %}');">
+	<div class="container">
+		<br><br>
+		<div class="row">
+			
+			<div class="large-4 small-6 small-centered columns">
+				<h1 class="title-vibes text-center">Krindle</h1>
+				<br>
+				
+			</div>
+			
+		</div>
+	</div>
+</div>
+{% endblock %}
