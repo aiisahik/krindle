@@ -10,8 +10,9 @@ class UserProfile(models.Model):
     weight = models.IntegerField(blank=True)
     # Height in inches
     height = models.IntegerField(blank=True)
+    gender = models.CharField(choices=GENDER_CHOICES)
 
-    GENDER = (
+    GENDER_CHOICES = (
         ('M', 'Male'),
         ('F', 'Female')
     )
