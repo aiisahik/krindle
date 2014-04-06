@@ -245,7 +245,8 @@ class UserProfile(models.Model):
 class UserProfileForm(ModelForm):
     class Meta:
         model = UserProfile
-        fields = ['birth_date', 'weight', 'height', 'gender', 'education_level']
+        exclude = ['user']
+        # fields = ['birth_date', 'weight', 'height', 'gender', 'education_level']
 
 
 
