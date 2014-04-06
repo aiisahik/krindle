@@ -10,13 +10,15 @@ class UserProfile(models.Model):
     weight = models.IntegerField(blank=True)
     # Height in inches
     height = models.IntegerField(blank=True)
-    gender = models.CharField(choices=GENDER_CHOICES)
 
     GENDER_CHOICES = (
         ('M', 'Male'),
         ('F', 'Female')
     )
-    EDUCATION_LEVEL = (
+    gender = models.CharField(max_length=10,
+                                choices=GENDER_CHOICES,
+                                blank=True)
+    EDUCATION_LEVEL_CHOICES = (
         (None, 'No Answer'),
         ('HIGH SCHOOL', 'High School'),
         ('SOME COLLEGE', 'Some College'),
@@ -24,7 +26,10 @@ class UserProfile(models.Model):
         ('BACHELORS', 'Bachelors Degree'),
         ('GRADUATE', 'Graduate / Professional Degree'),
     )
-    HAIR_COLOR = (
+    education_level = models.CharField(max_length=30,
+                                choices=EDUCATION_LEVEL_CHOICES,
+                                blank=True)
+    HAIR_COLOR_CHOICES = (
         (None, 'No Answer'),
         ('BLACK', 'Black'),
         ('BLONDE', 'Blonde'),
@@ -36,7 +41,10 @@ class UserProfile(models.Model):
         ('SALT AND PEPPER', 'Salt and Pepper'),
         ('BALD', 'Bald'),
     )
-    EYE_COLOR = (
+    hair_color = models.CharField(max_length=30,
+                                choices=HAIR_COLOR_CHOICES,
+                                blank=True)
+    EYE_COLOR_CHOICES = (
         (None, 'No Answer'),
         ('BLACK', 'Black'),
         ('BLUE', 'Blue'),
@@ -45,7 +53,10 @@ class UserProfile(models.Model):
         ('GREEN', 'Green'),
         ('HAZEL', 'Hazel'),
     )
-    BODY_TYPE = (
+    eye_color = models.CharField(max_length=30,
+                                choices=EYE_COLOR_CHOICES,
+                                blank=True)
+    BODY_TYPE_CHOICES = (
         (None, 'No Answer'),
         ('SLENDER', 'Slender / Thin'),
         ('AVERAGE', 'Average'),
@@ -54,7 +65,10 @@ class UserProfile(models.Model):
         ('SLIGHTLY HEAVY', 'A Few Extra Pounds'),
         ('STOCKY', 'Stocky'),
     )
-    ASTROLOGICAL_SIGN = (
+    body_type = models.CharField(max_length=30,
+                                choices=BODY_TYPE_CHOICES,
+                                blank=True)
+    ASTROLOGICAL_SIGN_CHOICES = (
         (None, 'No Answer'),
         ('CAPRICORN', 'Capricorn'),
         ('AQUARIUS', 'Aquarius'),
@@ -69,13 +83,19 @@ class UserProfile(models.Model):
         ('SCORPIO', 'Scorpio'),
         ('SAGITTARIUS', 'Sagittarius'),
     )
-    RELATIONSHIP_STATUS = (
+    astrological_sign = models.CharField(max_length=30,
+                                choices=ASTROLOGICAL_SIGN_CHOICES,
+                                blank=True)
+    RELATIONSHIP_STATUS_CHOICES = (
         (None, 'No Answer'),
         ('CURRENTLY SEPARATED', 'Currently Separated'),
         ('DIVORCED', 'Divorced'),
         ('WIDOWED', 'Widow / Widower'),
     )
-    OCCUPATION = (
+    relationship_status = models.CharField(max_length=30,
+                                choices=RELATIONSHIP_STATUS_CHOICES,
+                                blank=True)
+    OCCUPATION_CHOICES = (
         (None, 'No Answer'),
         ('ADMINISTRATIVE', 'Administrative / Secretarial'),
         ('ARTISTIC', 'Artistic / Creative / Performance'),
@@ -99,37 +119,55 @@ class UserProfile(models.Model):
         ('FASHION', 'Fashion / Model / Beauty'),
         ('ARCHITECTURE', 'Architecture / Interior Design'),
     )
-    HAVE_KIDS = (
+    occupation = models.CharField(max_length=50,
+                                choices=OCCUPATION_CHOICES,
+                                blank=True)
+    HAVE_KIDS_CHOICES = (
         (None, 'No Answer'),
         ('YES', 'Yes'),
         ('NO', 'No'),
     )
+    have_kids = models.CharField(max_length=30,
+                                choices=HAVE_KIDS_CHOICES,
+                                blank=True)
     have_kids_num = models.IntegerField(blank=True)
-    WANT_KIDS = (
+    WANT_KIDS_CHOICES = (
         (None, 'No Answer'),
         ('YES', 'Yes'),
         ('NO', 'No'),
     )
+    want_kids = models.CharField(max_length=30,
+                                choices=WANT_KIDS_CHOICES,
+                                blank=True)
     want_kids_num = models.IntegerField(blank=True)
-    SMOKE = (
+    SMOKE_CHOICES = (
         (None, 'No Answer'),
         ('NO', 'No'),
         ('OCCASIONAL', 'Occasionally'),
         ('DAILY', 'Daily'),
         ('QUITTING', 'Yes, But Trying To Quit'),
     )
-    DRINK = (
+    smoke = models.CharField(max_length=30,
+                                choices=SMOKE_CHOICES,
+                                blank=True)
+    DRINK_CHOICES = (
         (None, 'No Answer'),
         ('NEVER', 'Never'),
         ('SOCIAL', 'Social Drinker'),
         ('REGULAR', 'Regularly'),
     )
-    EXERCISE = (
+    drink = models.CharField(max_length=30,
+                                choices=DRINK_CHOICES,
+                                blank=True)
+    EXERCISE_CHOICES = (
         (None, 'No Answer'),
         ('MODERATE', '1-3 Times Per Week'),
         ('FIEND', '4-5 Times Per Week'),
     )
-    ETHNICITY = (
+    exercise = models.CharField(max_length=30,
+                                choices=EXERCISE_CHOICES,
+                                blank=True)
+    ETHNICITY_CHOICES = (
         (None, 'No Answer'),
         ('ASIAN', 'Asian'),
         ('BLACK', 'Black / African Descent'),
@@ -141,7 +179,10 @@ class UserProfile(models.Model):
         ('CAUCASIAN', 'White / Caucasian'),
         ('OTHER', 'Other'),
     )
-    RELIGION = (
+    ethnicity = models.CharField(max_length=30,
+                                choices=ETHNICITY_CHOICES,
+                                blank=True)
+    RELIGION_CHOICES = (
         (None, 'No Answer'),
         ('AGNOSTIC', 'Agnostic'),
         ('ATHEIST', 'Atheist'),
@@ -156,7 +197,10 @@ class UserProfile(models.Model):
         ('OTHER', 'Other'),
         ('OTHER CHRISTIAN', 'Christian / Other'),
     )
-    POLITICS = (
+    religion = models.CharField(max_length=30,
+                                choices=RELIGION_CHOICES,
+                                blank=True)
+    POLITICS_CHOICES = (
         (None, 'No Answer'),
         ('CONSERVATIVE', 'Conservative'),
         ('MODERATE', 'Moderate'),
@@ -164,15 +208,26 @@ class UserProfile(models.Model):
         ('NONCONFORMIST', 'Non-Conformist'),
         ('OTHER', 'Other'),
     )
-    HAVE_PETS = (
+    politics = models.CharField(max_length=30,
+                                choices=POLITICS_CHOICES,
+                                blank=True)
+    HAVE_PETS_CHOICES = (
         (None, 'No Answer'),
         ('NO', 'No'),
         ('YES', 'Yes'),
     )
-    LIKE_PETS = (
+    have_pets = models.CharField(max_length=30,
+                                choices=HAVE_PETS_CHOICES,
+                                blank=True)
+    LIKE_PETS_CHOICES = (
         (None, 'No Answer'),
         ('NO', 'No'),
         ('YES', 'Yes'),
     )
+    like_pets = models.CharField(max_length=30,
+                                choices=LIKE_PETS_CHOICES,
+                                blank=True)
 
-    
+
+
+
