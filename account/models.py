@@ -5,9 +5,9 @@ from django.contrib.auth.models import User
 
 class UserProfile(models.Model):
     user = models.ForeignKey(User)
-    birth_date = models.DateField(blank=True)
+    birth_date = models.DateField(blank=True, null=True)
     # Weight in pounds
-    weight = models.IntegerField(blank=True)
+    weight = models.IntegerField(blank=True, null=True)
     # Height in inches
     height = models.IntegerField(blank=True)
 
@@ -19,7 +19,7 @@ class UserProfile(models.Model):
                                 choices=GENDER_CHOICES,
                                 blank=True)
     EDUCATION_LEVEL_CHOICES = (
-        (None, 'No Answer'),
+        ('', 'No Answer'),
         ('HIGH SCHOOL', 'High School'),
         ('SOME COLLEGE', 'Some College'),
         ('ASSOCIATES', 'Associates Degree'),
@@ -30,7 +30,7 @@ class UserProfile(models.Model):
                                 choices=EDUCATION_LEVEL_CHOICES,
                                 blank=True)
     HAIR_COLOR_CHOICES = (
-        (None, 'No Answer'),
+        ('', 'No Answer'),
         ('BLACK', 'Black'),
         ('BLONDE', 'Blonde'),
         ('DARK BLONDE', 'Dark Blonde'),
@@ -45,7 +45,7 @@ class UserProfile(models.Model):
                                 choices=HAIR_COLOR_CHOICES,
                                 blank=True)
     EYE_COLOR_CHOICES = (
-        (None, 'No Answer'),
+        ('', 'No Answer'),
         ('BLACK', 'Black'),
         ('BLUE', 'Blue'),
         ('BROWN', 'Brown'),
@@ -57,7 +57,7 @@ class UserProfile(models.Model):
                                 choices=EYE_COLOR_CHOICES,
                                 blank=True)
     BODY_TYPE_CHOICES = (
-        (None, 'No Answer'),
+        ('', 'No Answer'),
         ('SLENDER', 'Slender / Thin'),
         ('AVERAGE', 'Average'),
         ('ATHLETIC', 'Athletic'),
@@ -69,7 +69,7 @@ class UserProfile(models.Model):
                                 choices=BODY_TYPE_CHOICES,
                                 blank=True)
     ASTROLOGICAL_SIGN_CHOICES = (
-        (None, 'No Answer'),
+        ('', 'No Answer'),
         ('CAPRICORN', 'Capricorn'),
         ('AQUARIUS', 'Aquarius'),
         ('PISCES', 'Pisces'),
@@ -87,7 +87,7 @@ class UserProfile(models.Model):
                                 choices=ASTROLOGICAL_SIGN_CHOICES,
                                 blank=True)
     RELATIONSHIP_STATUS_CHOICES = (
-        (None, 'No Answer'),
+        ('', 'No Answer'),
         ('CURRENTLY SEPARATED', 'Currently Separated'),
         ('DIVORCED', 'Divorced'),
         ('WIDOWED', 'Widow / Widower'),
@@ -96,7 +96,7 @@ class UserProfile(models.Model):
                                 choices=RELATIONSHIP_STATUS_CHOICES,
                                 blank=True)
     OCCUPATION_CHOICES = (
-        (None, 'No Answer'),
+        ('', 'No Answer'),
         ('ADMINISTRATIVE', 'Administrative / Secretarial'),
         ('ARTISTIC', 'Artistic / Creative / Performance'),
         ('EXECUTIVE', 'Executive / Management'),
@@ -123,7 +123,7 @@ class UserProfile(models.Model):
                                 choices=OCCUPATION_CHOICES,
                                 blank=True)
     HAVE_KIDS_CHOICES = (
-        (None, 'No Answer'),
+        ('', 'No Answer'),
         ('YES', 'Yes'),
         ('NO', 'No'),
     )
@@ -132,7 +132,7 @@ class UserProfile(models.Model):
                                 blank=True)
     have_kids_num = models.IntegerField(blank=True)
     WANT_KIDS_CHOICES = (
-        (None, 'No Answer'),
+        ('', 'No Answer'),
         ('YES', 'Yes'),
         ('NO', 'No'),
     )
@@ -141,7 +141,7 @@ class UserProfile(models.Model):
                                 blank=True)
     want_kids_num = models.IntegerField(blank=True)
     SMOKE_CHOICES = (
-        (None, 'No Answer'),
+        ('', 'No Answer'),
         ('NO', 'No'),
         ('OCCASIONAL', 'Occasionally'),
         ('DAILY', 'Daily'),
@@ -151,7 +151,7 @@ class UserProfile(models.Model):
                                 choices=SMOKE_CHOICES,
                                 blank=True)
     DRINK_CHOICES = (
-        (None, 'No Answer'),
+        ('', 'No Answer'),
         ('NEVER', 'Never'),
         ('SOCIAL', 'Social Drinker'),
         ('REGULAR', 'Regularly'),
@@ -160,7 +160,7 @@ class UserProfile(models.Model):
                                 choices=DRINK_CHOICES,
                                 blank=True)
     EXERCISE_CHOICES = (
-        (None, 'No Answer'),
+        ('', 'No Answer'),
         ('MODERATE', '1-3 Times Per Week'),
         ('FIEND', '4-5 Times Per Week'),
     )
@@ -168,7 +168,7 @@ class UserProfile(models.Model):
                                 choices=EXERCISE_CHOICES,
                                 blank=True)
     ETHNICITY_CHOICES = (
-        (None, 'No Answer'),
+        ('', 'No Answer'),
         ('ASIAN', 'Asian'),
         ('BLACK', 'Black / African Descent'),
         ('EAST INDIAN', 'East Indian'),
@@ -183,7 +183,7 @@ class UserProfile(models.Model):
                                 choices=ETHNICITY_CHOICES,
                                 blank=True)
     RELIGION_CHOICES = (
-        (None, 'No Answer'),
+        ('', 'No Answer'),
         ('AGNOSTIC', 'Agnostic'),
         ('ATHEIST', 'Atheist'),
         ('BUDDHIST', 'Buddhist'),
@@ -201,7 +201,7 @@ class UserProfile(models.Model):
                                 choices=RELIGION_CHOICES,
                                 blank=True)
     POLITICS_CHOICES = (
-        (None, 'No Answer'),
+        ('', 'No Answer'),
         ('CONSERVATIVE', 'Conservative'),
         ('MODERATE', 'Moderate'),
         ('LIBERAL', 'Liberal'),
@@ -212,7 +212,7 @@ class UserProfile(models.Model):
                                 choices=POLITICS_CHOICES,
                                 blank=True)
     HAVE_PETS_CHOICES = (
-        (None, 'No Answer'),
+        ('', 'No Answer'),
         ('NO', 'No'),
         ('YES', 'Yes'),
     )
@@ -220,7 +220,7 @@ class UserProfile(models.Model):
                                 choices=HAVE_PETS_CHOICES,
                                 blank=True)
     LIKE_PETS_CHOICES = (
-        (None, 'No Answer'),
+        ('', 'No Answer'),
         ('NO', 'No'),
         ('YES', 'Yes'),
     )
