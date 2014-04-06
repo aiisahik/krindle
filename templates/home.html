@@ -1,0 +1,43 @@
+{% extends '_base.html' %}
+{% load staticfiles %}
+
+{% block header%}
+{% include '_header.html' %}
+{% endblock %}
+
+{% block body %}
+<div style="background-image: url('{% static 'img/couple-cover-01.jpg' %}');">
+	<div class="container">
+		<br>
+		<div class="row">
+			<div class="medium-3 columns"></div>
+			<div class="medium-6 columns">
+				<form method="POST">
+					<div class="row">
+					    <div class="large-12 columns">
+					      <label>Email
+					        <input type="text" name="email" placeholder="email">
+					      </label>
+					    </div>
+					</div>
+					<div class="row">
+					    <div class="large-12 columns">
+					      <label>Password
+					        <input type="password" name="password" placeholder="password">
+					      </label>
+					    </div>
+					</div>
+					<div class="row">
+					    <div class="large-12 columns">
+					      <label>
+					        <button name="submit" class="button">Submit</button>
+					      </label>
+					    </div>
+					</div>
+				</form>
+			</div>
+			<div class="medium-3 columns"></div>
+		</div>
+	</div>
+</div>
+{% endblock %}
