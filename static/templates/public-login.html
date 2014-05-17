@@ -1,31 +1,22 @@
-
-	<div class="row collapse">
-	    <div class="large-3 columns">
-	    	<span class="prefix">Email</span>
-	    </div>
-	    <div class="large-9 columns">
-	        <input type="text" class="round" name="username" placeholder="email" ng-model="email">
+<form class="form-horizontal" role="form">
+	 <div class="form-group">
+	    <label class="col-sm-4 control-label">Email</label>
+	    <div class="col-sm-6">
+	        <input type="text" class="form-control" name="username" placeholder="email" ng-model="email">
 	    </div>
 	</div>
-	<div class="row collapse">
-	    <div class="large-3 columns">
-	    	<span class="prefix">Password</span>
-	    </div>
-	    <div class="large-9 columns">
-	        <input type="password" class="round" name="password" placeholder="password" ng-model="pwd">
+	 <div class="form-group">
+	    <label class="col-sm-4 control-label">Password</label>
+	    <div class="col-sm-6">
+	        <input type="password" class="form-control" name="password" placeholder="password" ng-model="pwd">
 	    </div>
 	</div>
-	<div class="row">
-	    <div class="large-12 columns">
-	      <label>
-	      	<ul class="button-group radius" style="width:100%;">
-				<li style="width:50%">
-					<a href="#" class="button" style="width:100%">Signup</a>
-				</li>
-				<li style="width:50%">
-					<button name="submit" class="button" style="width:100%" ng-click="login()">Login</button>
-				</li>
-			</ul>
-	      </label>
+	 <div class="form-group">
+	    <div class="col-sm-6">
+			<a href="#" class="btn btn-default btn-block">Signup</a>
+		</div>
+		<div class="col-sm-6">
+			<button class="btn btn-primary btn-block" ng-click="login()">Login</button>
 	    </div>
 	</div>
+</form>
