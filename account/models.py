@@ -11,7 +11,7 @@ class UserProfile(models.Model):
     weight = models.IntegerField(blank=True, null=True)
     # Height in inches
     height = models.IntegerField(blank=True, null=True)
-
+    description = models.TextField(blank=True, null=True)
     GENDER_CHOICES = (
         ('M', 'Male'),
         ('F', 'Female')
