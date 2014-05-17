@@ -1,0 +1,28 @@
+{% extends '_base.html' %}
+{% load staticfiles %}
+
+{% block css %}
+{{block.super}}
+<link href='http://fonts.googleapis.com/css?family=Great+Vibes' rel='stylesheet' type='text/css'>
+{% endblock css %}
+
+{% block js %}
+	{{block.super}}
+	<script src="{% static 'js/app/parse-account.js' %}"></script>
+{% endblock %}
+
+{% block body %}
+<div class="bg-cover bg-window" style="background-image: url('{% static 'img/couple-cover-01.jpg' %}');">
+	<div class="container">
+		<br><br>
+		<div class="row">
+			<div class="large-4 small-6 small-centered columns">
+				<h1 class="title-vibes text-center">Abbie</h1>
+				<div ng-app="project">
+			        <div id="main" ng-view></div>
+			    </div>
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock %}
