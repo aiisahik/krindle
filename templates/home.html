@@ -6,49 +6,24 @@
 <link href='http://fonts.googleapis.com/css?family=Great+Vibes' rel='stylesheet' type='text/css'>
 {% endblock css %}
 
+{% block js %}
+	{{block.super}}
+	<script src="{% static 'js/app/app-home.js' %}"></script>
+	<script src="{% static 'js/app/parse-account.js' %}"></script>
+	<script src="{% static 'js/app/ctrl-home.js' %}"></script>
+{% endblock %}
+
 {% block body %}
 <div class="bg-cover bg-window" style="background-image: url('{% static 'img/couple-cover-01.jpg' %}');">
 	<div class="container">
 		<br><br>
 		<div class="row">
-			
 			<div class="large-4 small-6 small-centered columns">
-				<h1 class="title-vibes text-center">Krindle</h1>
-				<br>
-				<form method="POST" action="/account/login/">{% csrf_token %}
-					<div class="row collapse">
-					    <div class="large-3 columns">
-					    	<span class="prefix">Email</span>
-					    </div>
-					    <div class="large-9 columns">
-					        <input type="text" class="round" name="username" placeholder="email">
-					    </div>
-					</div>
-					<div class="row collapse">
-					    <div class="large-3 columns">
-					    	<span class="prefix">Password</span>
-					    </div>
-					    <div class="large-9 columns">
-					        <input type="password" class="round" name="password" placeholder="password">
-					    </div>
-					</div>
-					<div class="row">
-					    <div class="large-12 columns">
-					      <label>
-					      	<ul class="button-group radius" style="width:100%;">
-								<li style="width:50%">
-									<a href="#" class="button" style="width:100%">Signup</a>
-								</li>
-								<li style="width:50%">
-									<button name="submit" class="button" style="width:100%">Login</button>
-								</li>
-							</ul>
-					      </label>
-					    </div>
-					</div>
-				</form>
+				<h1 class="title-vibes text-center">Abbie</h1>
+				<div ng-app="project">
+			        <div id="main" ng-view></div>
+			    </div>
 			</div>
-			
 		</div>
 	</div>
 </div>

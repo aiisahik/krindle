@@ -1,7 +1,7 @@
 {% load staticfiles %}
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" ng-app="project">
 	<head>
 		<meta charset="utf-8">
   		<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,6 +17,10 @@
 		{% block body %}{% endblock %}
 	</body>
 	{% block js %}
-		<script src="{% static 'js/library/foundation/foundation.min.js' %}" />
+	    <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.16/angular.min.js"></script>
+	    <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.16/angular-route.min.js"></script>
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+		<script src="//www.parsecdn.com/js/parse-1.2.18.min.js"></script>
+		<script src="{% static 'js/library/foundation/foundation.min.js' %}" /></script>
 	{% endblock %}
 </html>

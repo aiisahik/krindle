@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"UserProfile",
+				"UserProfileAdmin"
+			],
+			[
 				"post",
 				"postID"
 			],
@@ -510,15 +514,19 @@
 			[
 				"li",
 				"LineItem"
-			],
-			[
-				"npc",
-				"npcId"
 			]
 		]
 	},
 	"buffers":
 	[
+		{
+			"file": "static/css/_base.css",
+			"settings":
+			{
+				"buffer_size": 231,
+				"line_ending": "Unix"
+			}
+		}
 	],
 	"build_system": "Packages/Python/Python.sublime-build",
 	"command_palette":
@@ -596,7 +604,25 @@
 	},
 	"file_history":
 	[
+		"/Users/mpk/python/krindle/account/urls.py",
+		"/Users/mpk/python/krindle/account/admin.py",
+		"/Users/mpk/python/krindle/templates/_header.html",
+		"/Users/mpk/python/krindle/templates/home.html",
+		"/Users/mpk/python/krindle/templates/login.html",
+		"/Users/mpk/python/krindle/krindleapp/urls.py",
+		"/Users/mpk/python/krindle/account/models.py",
+		"/Users/mpk/python/krindle/templates/_base.html",
+		"/Users/mpk/python/krindle/templates/account/editProfile.html",
 		"/Users/mpk/python/krindle/krindleapp/settings.py",
+		"/Users/mpk/python/krindle/account/views.py",
+		"/Users/mpk/python/krindle/accounts/urls.py",
+		"/Users/mpk/python/krindle/accounts/views.py",
+		"/Users/mpk/python/krindle/templates/_navbar.html",
+		"/Users/mpk/python/kinnek/dosa/kinnek/kinnek/account/untitled",
+		"/Users/mpk/python/krindle/requirements.txt",
+		"/Users/mpk/python/krindle/Procfile",
+		"/Users/mpk/python/krindle/.gitignore",
+		"/Users/mpk/python/krindle/krindleapp/Procfile",
 		"/Users/mpk/.virtualenvs/krindle/bin/postactivate",
 		"/Users/mpk/.bash_profile",
 		"/Users/mpk/.virtualenvs/kinnek/bin/postactivate",
@@ -705,25 +731,7 @@
 		"/Users/mpk/python/kinnek/dosa/kinnek/kinnek/templates/account/companyProfile_supplier.html",
 		"/Users/mpk/python/kinnek/dosa/kinnek/kinnek/account/views.py",
 		"/Users/mpk/python/kinnek/dosa/kinnek/kinnek/notifications/urls.py",
-		"/Users/mpk/python/kinnek/dosa/kinnek/kinnek/templates/account/_base_account.html",
-		"/Users/mpk/python/kinnek/dosa/kinnek/kinnek/templates/browse/_include_product_list.html",
-		"/Users/mpk/python/kinnek/dosa/kinnek/kinnek/templates/notifications/test.html",
-		"/Users/mpk/python/kinnek/dosa/kinnek/kinnek/static/dash/online/app.js",
-		"/Users/mpk/python/kinnek/dosa/kinnek/kinnek/templates/notifications/onlineUsers.html",
-		"/Users/mpk/python/kinnek/dosa/kinnek/kinnek/static/dash/online/visitors.html",
-		"/Users/mpk/python/kinnek/dosa/kinnek/kinnek/static/js/shelf/app.js",
-		"/Users/mpk/python/kinnek/dosa/kinnek/kinnek/static/js/shelf/formModels.js",
-		"/Users/mpk/python/kinnek/dosa/kinnek/kinnek/static/js/shelf/fieldInputView.js",
-		"/Users/mpk/python/kinnek/dosa/kinnek/kinnek/templates/base/buyer_top_nav.html",
-		"/Users/mpk/python/kinnek/dosa/kinnek/kinnek/static/js/gallery/app.js",
-		"/Users/mpk/python/kinnek/dosa/kinnek/kinnek/static/js/mypost/message.js",
-		"/Users/mpk/python/kinnek/dosa/kinnek/kinnek/templates/browse/browse_autocomplete.html",
-		"/Users/mpk/python/kinnek/dosa/kinnek/kinnek/static/js/gallery/addNPCModal.js",
-		"/Users/mpk/python/kinnek/dosa/kinnek/kinnek/static/js/mypost/create.js",
-		"/Users/mpk/python/kinnek/dosa/kinnek/kinnek/static/js/mypost/npc.js",
-		"/Users/mpk/python/kinnek/dosa/kinnek/kinnek/static/js/mypost/postDetail.js",
-		"/Users/mpk/python/kinnek/dosa/kinnek/kinnek/static/js/mypost/post.js",
-		"/Users/mpk/python/kinnek/dosa/kinnek/kinnek/static/js/gallery/editModal.js"
+		"/Users/mpk/python/kinnek/dosa/kinnek/kinnek/templates/account/_base_account.html"
 	],
 	"find":
 	{
@@ -781,6 +789,16 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"is_supplier",
+			"name",
+			"blank=True",
+			"GENDER",
+			"admin",
+			"CONTEXT_PROCESSORS",
+			"medium-",
+			"User",
+			"large",
+			"template",
 			"FeedbackModalView",
 			"FeedbackModule",
 			"ktrack",
@@ -898,17 +916,7 @@
 			"div[name=orders], .quote",
 			"next steps",
 			"supplier-details",
-			"}, {",
-			"<b>",
-			"<hr>",
-			"<b>",
-			"<hr><h4>",
-			"<b>",
-			"<hr><h4>",
-			"</b>",
-			"<b>",
-			"<h4>",
-			"</b>"
+			"}, {"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -1035,8 +1043,35 @@
 			]
 		},
 		{
+			"selected": 0,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "static/css/_base.css",
+					"settings":
+					{
+						"buffer_size": 231,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								231,
+								231
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
 			]
 		}
 	],
@@ -1068,7 +1103,7 @@
 		"cols":
 		[
 			0.0,
-			0.457278103299,
+			0.586528862847,
 			1.0
 		],
 		"rows":
@@ -1094,7 +1129,127 @@
 		[
 			[
 				"settings",
-				"dosa/kinnek/kinnek/settings.py"
+				"krindleapp/settings.py"
+			],
+			[
+				"account/views",
+				"account/views.py"
+			],
+			[
+				"home",
+				"templates/home.html"
+			],
+			[
+				"edit",
+				"templates/account/editProfile.html"
+			],
+			[
+				"view",
+				"account/views.py"
+			],
+			[
+				"editpr",
+				"templates/account/editProfile.html"
+			],
+			[
+				"urls",
+				"account/urls.py"
+			],
+			[
+				"views",
+				"account/views.py"
+			],
+			[
+				"models.py",
+				"account/models.py"
+			],
+			[
+				"model",
+				"account/models.py"
+			],
+			[
+				"admin",
+				"account/admin.py"
+			],
+			[
+				"mode",
+				"account/models.py"
+			],
+			[
+				"editprofile",
+				"templates/account/editProfile.html"
+			],
+			[
+				"account/models",
+				"account/models.py"
+			],
+			[
+				"models",
+				"account/models.py"
+			],
+			[
+				"account/view",
+				"account/views.py"
+			],
+			[
+				"account/urls",
+				"account/urls.py"
+			],
+			[
+				"account/model",
+				"account/models.py"
+			],
+			[
+				"account/admin",
+				"account/admin.py"
+			],
+			[
+				"main",
+				"templates/main.html"
+			],
+			[
+				"accounturs",
+				"account/urls.py"
+			],
+			[
+				"header",
+				"templates/_header.html"
+			],
+			[
+				"login",
+				"templates/login.html"
+			],
+			[
+				"viewp",
+				"account/views.py"
+			],
+			[
+				"_base.css",
+				"static/css/_base.css"
+			],
+			[
+				"urls.py",
+				"krindleapp/urls.py"
+			],
+			[
+				"accounts/",
+				"accounts/views.py"
+			],
+			[
+				"requirements",
+				"requirements.txt"
+			],
+			[
+				"procil",
+				"Procfile"
+			],
+			[
+				"",
+				".gitignore"
+			],
+			[
+				"ignore",
+				".gitignore"
 			],
 			[
 				"viewpost",
@@ -1301,10 +1456,6 @@
 				"dosa/kinnek/kinnek/urls.py"
 			],
 			[
-				"urls",
-				"dosa/kinnek/kinnek/browse/urls.py"
-			],
-			[
 				"npcbrowse",
 				"dosa/kinnek/kinnek/templates/browse/npc_browse.html"
 			],
@@ -1487,122 +1638,6 @@
 			[
 				"createpost",
 				"dosa/kinnek/kinnek/templates/post/createPost_dynamic.html"
-			],
-			[
-				"_basebuyer",
-				"dosa/kinnek/kinnek/templates/base/_base_buyer.html"
-			],
-			[
-				"createpostdy",
-				"dosa/kinnek/kinnek/templates/post/createPost_dynamic.html"
-			],
-			[
-				"productforms",
-				"dosa/kinnek/kinnek/static/js/products_forms.js"
-			],
-			[
-				"productform",
-				"dosa/kinnek/kinnek/static/js/products_forms.js"
-			],
-			[
-				"responseform",
-				"dosa/kinnek/kinnek/templates/postdirectory/_include_response_form_templates.html"
-			],
-			[
-				"browsecss",
-				"dosa/kinnek/kinnek/static/css/Supplier/PostDirectory/browse.css"
-			],
-			[
-				"ajax.py",
-				"dosa/kinnek/kinnek/ajaxLib/ajax.py"
-			],
-			[
-				"postdetails",
-				"dosa/kinnek/kinnek/templates/postdirectory/post_details_v2.html"
-			],
-			[
-				"company",
-				"dosa/kinnek/kinnek/templates/account/_base_company_profile.html"
-			],
-			[
-				"_include_profile_infostrip",
-				"dosa/kinnek/kinnek/templates/account/_include_profile_infostrip.html"
-			],
-			[
-				"companyprofilemain",
-				"dosa/kinnek/kinnek/templates/account/companyProfile_main.html"
-			],
-			[
-				"router.js",
-				"dosa/kinnek/kinnek/static/js/quote/router.js"
-			],
-			[
-				"_include_post_details_nav",
-				"dosa/kinnek/kinnek/templates/postdirectory/_include_post_details_nav.html"
-			],
-			[
-				"postdetails2",
-				"dosa/kinnek/kinnek/templates/postdirectory/post_details_v2.html"
-			],
-			[
-				"formmodels",
-				"dosa/kinnek/kinnek/static/js/shelf/formModels.js"
-			],
-			[
-				"fieldview",
-				"dosa/kinnek/kinnek/static/js/shelf/fieldView.js"
-			],
-			[
-				"secondlanding",
-				"dosa/kinnek/kinnek/static/js/shelf/secondLandingView.js"
-			],
-			[
-				"contentv",
-				"dosa/kinnek/kinnek/static/js/shelf/contentView.js"
-			],
-			[
-				"npcbasetemplate",
-				"dosa/kinnek/kinnek/templates/products/base/npcShelf_base_templates.html"
-			],
-			[
-				"npcshelf",
-				"dosa/kinnek/kinnek/templates/products/npcShelf_main.html"
-			],
-			[
-				"label",
-				"dosa/kinnek/kinnek/static/js/shelf/fieldLabelView.js"
-			],
-			[
-				"location",
-				"dosa/kinnek/kinnek/static/js/shelf/fieldLocationView.js"
-			],
-			[
-				"formview",
-				"dosa/kinnek/kinnek/static/js/shelf/formView.js"
-			],
-			[
-				"responsetemplate",
-				"dosa/kinnek/kinnek/templates/postdirectory/_include_response_reuse_templates.html"
-			],
-			[
-				"router",
-				"dosa/kinnek/kinnek/static/js/quote/router.js"
-			],
-			[
-				"helpers",
-				"dosa/kinnek/kinnek/static/js/mypost/helpers.js"
-			],
-			[
-				"responseview",
-				"dosa/kinnek/kinnek/templates/postdirectory/_include_response_view_templates.html"
-			],
-			[
-				"viewpost2",
-				"dosa/kinnek/kinnek/templates/post/viewPosts_v2.html"
-			],
-			[
-				"shelf/",
-				"dosa/kinnek/kinnek/static/js/shelf/fieldSelectView.js"
 			]
 		],
 		"width": 0.0
